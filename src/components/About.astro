@@ -1,9 +1,14 @@
 ---
-import profile from "../data/profile.json";
+interface Props {
+  profile: { about: string[]; human?: string };
+  title: string;
+}
+
+const { profile, title } = Astro.props;
 ---
 
-<section id="about" class="about">
-  <h2><span class="idx">01</span>About</h2>
+<section id="about" class="about" data-reveal>
+  <h2><span class="idx">01</span>{title}</h2>
   {profile.about.map((para) => <p>{para}</p>)}
   {profile.human && <div class="human">{profile.human}</div>}
 </section>

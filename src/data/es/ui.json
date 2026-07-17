@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "about": "sobre mí",
+    "experience": "experiencia",
+    "speaking": "charlas",
+    "education": "educación"
+  },
+  "sections": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "speaking": "Charlas y comunidad",
+    "education": "Educación y certificaciones"
+  },
+  "watch": "ver ↗",
+  "upcoming": "próximamente",
+  "now": "actual",
+  "cta": "Hablemos de datos.",
+  "builtWith": "Hecho con Astro",
+  "themeToggle": "Cambiar tema",
+  "langSwitch": { "label": "en", "title": "English version" }
+}

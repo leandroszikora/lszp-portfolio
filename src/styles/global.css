@@ -81,3 +81,80 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; }
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
+
+/* ============================================================
+   Reveal-on-scroll (micro-interactions)
+   The .reveal-init class is added ONLY by JS, and only when
+   prefers-reduced-motion is not set — so content stays visible
+   without JS and for users who reduce motion.
+   ============================================================ */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal-init.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   Print — clean CV-like document (Cmd+P)
+   Force light tokens, drop chrome/effects, compact & paginate.
+   ============================================================ */
+@media print {
+  :root,
+  :root[data-theme="dark"],
+  :root[data-theme="light"] {
+    --paper: #ffffff;
+    --ink: #000000;
+    --ink-soft: #333333;
+    --line: #cccccc;
+    --accent: #000000;
+    --accent-soft: #f2f2f2;
+    --chip-bg: #f2f2f2;
+  }
+
+  html { scroll-behavior: auto; }
+  body {
+    background: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: auto;
+  }
+
+  /* Hide site chrome and interactive-only affordances */
+  nav,
+  .theme-toggle,
+  .lang-switch,
+  .watch,
+  .hero-links,
+  .human {
+    display: none !important;
+  }
+
+  /* Neutralise reveal + hover effects */
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  a { color: #000000 !important; text-decoration: none !important; }
+  /* The footer email link text is the address itself, so it already
+     prints as plain, readable text once link styling is removed. */
+
+  /* Compact spacing */
+  .wrap { max-width: 100%; padding: 0; }
+  header.hero { padding: 0 0 1rem !important; }
+  section { padding: 1rem 0 !important; }
+  footer { padding: 1rem 0 !important; }
+
+  /* Keep entries from splitting across pages */
+  .job,
+  .cert,
+  .talk,
+  .edu-main,
+  .quote {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

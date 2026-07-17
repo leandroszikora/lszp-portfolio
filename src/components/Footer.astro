@@ -1,18 +1,29 @@
 ---
-import profile from "../data/profile.json";
+interface Props {
+  profile: {
+    name: string;
+    email: string;
+    linkedin: string;
+    github: string;
+    location: string;
+  };
+  ui: { cta: string; builtWith: string };
+}
+
+const { profile, ui } = Astro.props;
 
 const year = new Date().getFullYear();
 ---
 
 <footer>
-  <p class="cta">Let's talk data.</p>
+  <p class="cta">{ui.cta}</p>
   <div class="links">
-    <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    <a class="footer-email" href={`mailto:${profile.email}`}>{profile.email}</a>
     <a href={profile.linkedin}>linkedin ↗</a>
     <a href={profile.github}>github ↗</a>
   </div>
   <p class="fine">
-    © {year} {profile.name} · Built with Astro · {profile.location}
+    © {year} {profile.name} · {ui.builtWith} · {profile.location}
   </p>
 </footer>
 

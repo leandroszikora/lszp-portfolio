@@ -1,5 +1,18 @@
 ---
-import profile from "../data/profile.json";
+interface Props {
+  profile: {
+    name: string;
+    role: string;
+    location: string;
+    headline: string;
+    tagline: string;
+    email: string;
+    linkedin: string;
+    github: string;
+  };
+}
+
+const { profile } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const photo = `${base}/photo.jpg`;

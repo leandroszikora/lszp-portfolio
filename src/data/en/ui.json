@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "about": "about",
+    "experience": "experience",
+    "speaking": "speaking",
+    "education": "education"
+  },
+  "sections": {
+    "about": "About",
+    "experience": "Experience",
+    "speaking": "Speaking & Community",
+    "education": "Education & Certifications"
+  },
+  "watch": "watch ↗",
+  "upcoming": "upcoming",
+  "now": "now",
+  "cta": "Let's talk data.",
+  "builtWith": "Built with Astro",
+  "themeToggle": "Toggle dark mode",
+  "langSwitch": { "label": "es", "title": "Versión en español" }
+}

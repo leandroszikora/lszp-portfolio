@@ -1,0 +1,20 @@
+{
+  "name": "Leandro Szikora Panaia",
+  "role": "Staff ML Engineer",
+  "location": "Barcelona",
+  "headline": "Plataformas de datos, de punta a punta.",
+  "tagline": "Siete años recorriendo todo el stack de datos — de pipelines IoT y sistemas NoSQL en Buenos Aires a lakehouses enterprise y data governance en Barcelona. Próximo capítulo: Staff ML Engineer en Factorial.",
+  "email": "leandroszikora@hotmail.com",
+  "linkedin": "https://www.linkedin.com/in/leandro-szikora/",
+  "github": "https://github.com/leandroszikora",
+  "about": [
+    "Soy Ingeniero en Sistemas de Información (UTN FRBA); me enamoré temprano de los datos y los sistemas cloud, y nunca miré atrás. Lo que más disfruto es tomar decisiones: sopesar los trade-offs, asumir el riesgo calculado y hacerme cargo del resultado.",
+    "Aprendo rápido y me adapto más rápido — una habilidad afilada trabajando en equipos multiculturales entre Argentina y España. Hoy lidero un equipo de cuatro data engineers, y tuve la oportunidad de impulsar migraciones y proyectos de plataforma que atravesaron a la mayoría de las compañías donde trabajé."
+  ],
+  "human": "Fuera de horario: fútbol 🇦🇷, mate y café (no hace falta elegir), colecciono mangas y perfumes, recorro a pie cada ciudad que visito — y soy voluntario en un refugio de gatos, donde mis dos gatas aprueban plenamente mis decisiones de carrera.",
+  "recommendation": {
+    "quote": "His data pipelines and tools knowledge and his great ability to learn fast… was decisive for the success of the project.",
+    "author": "Oscar Pulido",
+    "authorRole": "Cloud Data Lake Engineer @ Google"
+  }
+}

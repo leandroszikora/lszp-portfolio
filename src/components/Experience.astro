@@ -1,9 +1,29 @@
 ---
-import experience from "../data/experience.json";
+interface Job {
+  title: string;
+  company: string;
+  location?: string;
+  start: string;
+  end?: string | null;
+  upcoming?: boolean;
+  bullets: string[];
+  tech: string[];
+}
+
+interface Props {
+  experience: Job[];
+  ui: {
+    sections: { experience: string };
+    upcoming: string;
+    now: string;
+  };
+}
+
+const { experience, ui } = Astro.props;
 ---
 
-<section id="experience">
-  <h2><span class="idx">02</span>Experience</h2>
+<section id="experience" data-reveal>
+  <h2><span class="idx">02</span>{ui.sections.experience}</h2>
 
   {
     experience.map((job) => (
@@ -13,7 +33,7 @@ import experience from "../data/experience.json";
             <span class="now">{job.start} —</span>
           ) : job.end === "now" ? (
             <>
-              {job.start} — <span class="now">now</span>
+              {job.start} — <span class="now">{ui.now}</span>
             </>
           ) : (
             `${job.start} — ${job.end}`
@@ -22,7 +42,7 @@ import experience from "../data/experience.json";
         <div>
           <h3>
             {job.title}
-            {job.upcoming && <span class="badge">upcoming</span>}
+            {job.upcoming && <span class="badge">{ui.upcoming}</span>}
           </h3>
           <p class="org">
             {job.company}
@@ -134,6 +154,11 @@ import experience from "../data/experience.json";
     color: var(--ink-soft);
     padding: 0.2rem 0.55rem;
     border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .chip:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
   }
   @media (max-width: 600px) {
     .job {

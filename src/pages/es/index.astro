@@ -1,0 +1,42 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import Experience from "../../components/Experience.astro";
+import Speaking from "../../components/Speaking.astro";
+import Education from "../../components/Education.astro";
+import Footer from "../../components/Footer.astro";
+
+import profile from "../../data/es/profile.json";
+import experience from "../../data/es/experience.json";
+import speaking from "../../data/es/speaking.json";
+import education from "../../data/es/education.json";
+import certifications from "../../data/es/certifications.json";
+import ui from "../../data/es/ui.json";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const otherLocaleUrl = `${base}/`;
+---
+
+<Base locale="es" profile={profile} education={education}>
+  <div class="wrap">
+    <Nav brand={profile.name} ui={ui} otherLocaleUrl={otherLocaleUrl} />
+    <Hero profile={profile} />
+    <main>
+      <About profile={profile} title={ui.sections.about} />
+      <Experience experience={experience} ui={ui} />
+      <Speaking
+        speaking={speaking}
+        recommendation={profile.recommendation}
+        ui={ui}
+      />
+      <Education
+        education={education}
+        certifications={certifications}
+        title={ui.sections.education}
+      />
+    </main>
+    <Footer profile={profile} ui={ui} />
+  </div>
+</Base>

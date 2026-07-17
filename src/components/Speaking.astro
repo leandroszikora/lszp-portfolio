@@ -1,12 +1,22 @@
 ---
-import speaking from "../data/speaking.json";
-import profile from "../data/profile.json";
+interface Talk {
+  where: string;
+  title: string;
+  description: string;
+  url?: string | null;
+}
 
-const rec = profile.recommendation;
+interface Props {
+  speaking: Talk[];
+  recommendation?: { quote: string; author: string; authorRole: string };
+  ui: { sections: { speaking: string }; watch: string };
+}
+
+const { speaking, recommendation: rec, ui } = Astro.props;
 ---
 
-<section id="speaking">
-  <h2><span class="idx">03</span>Speaking &amp; Community</h2>
+<section id="speaking" data-reveal>
+  <h2><span class="idx">03</span>{ui.sections.speaking}</h2>
   <div class="talks">
     {
       speaking.map((talk) => (
@@ -16,7 +26,7 @@ const rec = profile.recommendation;
           <p>{talk.description}</p>
           {talk.url && (
             <a class="watch" href={talk.url}>
-              watch ↗
+              {ui.watch}
             </a>
           )}
         </article>
@@ -64,6 +74,16 @@ const rec = profile.recommendation;
   .talk {
     background: var(--paper);
     padding: 1.4rem 1.5rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .talk:hover {
+    background: var(--accent-soft);
+    transform: translateY(-2px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .talk:hover {
+      transform: none;
+    }
   }
   .talk .where {
     font-family: var(--mono);

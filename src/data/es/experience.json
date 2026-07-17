@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Staff ML Engineer",
+    "company": "Factorial",
+    "location": "Barcelona",
+    "start": "sep 2026",
+    "end": null,
+    "upcoming": true,
+    "bullets": [
+      "Me sumo al unicornio HR-tech de Barcelona para trabajar en todo el stack de datos y ML."
+    ],
+    "tech": []
+  },
+  {
+    "title": "Senior Data Engineer",
+    "company": "Schwarz Digits Spain",
+    "location": "Barcelona",
+    "start": "2023",
+    "end": "now",
+    "bullets": [
+      "Lidero el equipo de Data Engineering (4 ingenieros) dentro del equipo de Data Platform — roadmap y desarrollo de carrera.",
+      "Diseño features de data governance, seguridad y disponibilidad para la Phar Data Platform."
+    ],
+    "tech": ["Azure", "Databricks", "Airflow", "Terraform", "Kubernetes", "Flink"]
+  },
+  {
+    "title": "Senior Data Engineer",
+    "company": "Oxigent Technologies",
+    "location": "Barcelona",
+    "start": "2022",
+    "end": "2023",
+    "bullets": [
+      "Diseñé y mantuve features para la plataforma de datos principal de un cliente top."
+    ],
+    "tech": ["Azure", "Databricks", "Scala"]
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Etermax",
+    "location": "Buenos Aires",
+    "start": "2021",
+    "end": "2022",
+    "bullets": [
+      "Construí pipelines para equipos de negocio con Airflow, Databricks, Redshift y S3."
+    ],
+    "tech": ["Airflow", "Databricks", "AWS"]
+  },
+  {
+    "title": "Big Data Engineer",
+    "company": "DBLandIT",
+    "location": "Buenos Aires",
+    "start": "2019",
+    "end": "2021",
+    "bullets": [
+      "Plataformas IoT, minería de datos del censo agropecuario nacional, análisis de rating televisivo, data lakes serverless."
+    ],
+    "tech": ["PySpark", "AWS Glue", "MongoDB", "Cassandra", "Redis"]
+  },
+  {
+    "title": "Ayudante de cátedra — Bases de Datos NoSQL",
+    "company": "Universidad Tecnológica Nacional (FRBA)",
+    "location": "Buenos Aires",
+    "start": "2021",
+    "end": "2022",
+    "bullets": [],
+    "tech": ["Redis", "Cassandra", "MongoDB", "Neo4J", "Hadoop"]
+  }
+]

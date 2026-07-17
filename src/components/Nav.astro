@@ -1,19 +1,55 @@
 ---
-import profile from "../data/profile.json";
+interface Props {
+  brand: string;
+  ui: {
+    nav: { about: string; experience: string; speaking: string; education: string };
+    themeToggle: string;
+    langSwitch: { label: string; title: string };
+  };
+  otherLocaleUrl: string;
+}
+
+const { brand, ui, otherLocaleUrl } = Astro.props;
 ---
 
 <nav aria-label="Main">
-  <span class="brand">{profile.name.toLowerCase()}</span>
-  <a href="#about">about</a>
-  <a href="#experience">experience</a>
-  <a href="#speaking">speaking</a>
-  <a href="#education">education</a>
+  <span class="brand">{brand.toLowerCase()}</span>
+  <a href="#about">{ui.nav.about}</a>
+  <a href="#experience">{ui.nav.experience}</a>
+  <a href="#speaking">{ui.nav.speaking}</a>
+  <a href="#education">{ui.nav.education}</a>
+  <a
+    class="lang-switch"
+    href={otherLocaleUrl}
+    title={ui.langSwitch.title}
+    hreflang={ui.langSwitch.label}
+    rel="alternate"
+    lang={ui.langSwitch.label}>{ui.langSwitch.label}</a
+  >
+  <button type="button" class="theme-toggle" aria-label={ui.themeToggle} aria-pressed="false">
+    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="4" fill="currentColor"></circle>
+      <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="12" y1="2" x2="12" y2="4"></line>
+        <line x1="12" y1="20" x2="12" y2="22"></line>
+        <line x1="2" y1="12" x2="4" y2="12"></line>
+        <line x1="20" y1="12" x2="22" y2="12"></line>
+        <line x1="4.9" y1="4.9" x2="6.3" y2="6.3"></line>
+        <line x1="17.7" y1="17.7" x2="19.1" y2="19.1"></line>
+        <line x1="4.9" y1="19.1" x2="6.3" y2="17.7"></line>
+        <line x1="17.7" y1="6.3" x2="19.1" y2="4.9"></line>
+      </g>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" fill="currentColor"></path>
+    </svg>
+  </button>
 </nav>
 
 <style>
   nav {
     display: flex;
-    gap: 1.75rem;
+    gap: 1.25rem;
     align-items: center;
     padding: 1.5rem 0 0;
     font-family: var(--mono);
@@ -24,6 +60,7 @@ import profile from "../data/profile.json";
   nav a {
     color: var(--ink-soft);
     text-transform: lowercase;
+    transition: color 0.2s ease;
   }
   nav a:hover {
     color: var(--accent);
@@ -33,4 +70,55 @@ import profile from "../data/profile.json";
     font-weight: 600;
     margin-right: auto;
   }
+  .lang-switch {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.15rem 0.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .lang-switch:hover,
+  .lang-switch:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .theme-toggle:hover,
+  .theme-toggle:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Show the icon for the CURRENT effective theme:
+     light active -> sun, dark active -> moon. Default (no stored
+     choice) follows the system via prefers-color-scheme. */
+  .theme-toggle .icon-moon { display: none; }
+  .theme-toggle .icon-sun { display: block; }
+  @media (prefers-color-scheme: dark) {
+    .theme-toggle .icon-sun { display: none; }
+    .theme-toggle .icon-moon { display: block; }
+  }
+  :global(:root[data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+  :global(:root[data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+  :global(:root[data-theme="dark"]) .theme-toggle .icon-sun { display: none; }
+  :global(:root[data-theme="dark"]) .theme-toggle .icon-moon { display: block; }
 </style>

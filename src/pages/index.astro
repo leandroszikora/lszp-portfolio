@@ -7,18 +7,36 @@ import Experience from "../components/Experience.astro";
 import Speaking from "../components/Speaking.astro";
 import Education from "../components/Education.astro";
 import Footer from "../components/Footer.astro";
+
+import profile from "../data/en/profile.json";
+import experience from "../data/en/experience.json";
+import speaking from "../data/en/speaking.json";
+import education from "../data/en/education.json";
+import certifications from "../data/en/certifications.json";
+import ui from "../data/en/ui.json";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const otherLocaleUrl = `${base}/es/`;
 ---
 
-<Base>
+<Base locale="en" profile={profile} education={education}>
   <div class="wrap">
-    <Nav />
-    <Hero />
+    <Nav brand={profile.name} ui={ui} otherLocaleUrl={otherLocaleUrl} />
+    <Hero profile={profile} />
     <main>
-      <About />
-      <Experience />
-      <Speaking />
-      <Education />
+      <About profile={profile} title={ui.sections.about} />
+      <Experience experience={experience} ui={ui} />
+      <Speaking
+        speaking={speaking}
+        recommendation={profile.recommendation}
+        ui={ui}
+      />
+      <Education
+        education={education}
+        certifications={certifications}
+        title={ui.sections.education}
+      />
     </main>
-    <Footer />
+    <Footer profile={profile} ui={ui} />
   </div>
 </Base>

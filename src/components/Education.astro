@@ -1,14 +1,26 @@
 ---
-import education from "../data/education.json";
-import certifications from "../data/certifications.json";
+interface Cert {
+  name: string;
+  issuer: string;
+  year: string;
+  note?: string;
+}
+
+interface Props {
+  education: { degree: string; school: string; years?: string; note?: string };
+  certifications: Cert[];
+  title: string;
+}
+
+const { education, certifications, title } = Astro.props;
 
 const eduMeta = [education.school, education.years, education.note]
   .filter(Boolean)
   .join(" · ");
 ---
 
-<section id="education">
-  <h2><span class="idx">04</span>Education &amp; Certifications</h2>
+<section id="education" data-reveal>
+  <h2><span class="idx">04</span>{title}</h2>
   <div class="edu-main">
     <h3>{education.degree}</h3>
     <p class="org">{eduMeta}</p>
@@ -64,6 +76,16 @@ const eduMeta = [education.school, education.years, education.note]
     border: 1px solid var(--line);
     border-radius: 6px;
     padding: 0.9rem 1rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .cert:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cert:hover {
+      transform: none;
+    }
   }
   .cert .name {
     font-size: 0.9rem;
