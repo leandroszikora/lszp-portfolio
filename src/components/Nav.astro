@@ -2,7 +2,7 @@
 interface Props {
   brand: string;
   ui: {
-    nav: { about: string; experience: string; speaking: string; education: string };
+    nav: { label: string; about: string; experience: string; speaking: string; education: string };
     themeToggle: string;
     langSwitch: { label: string; title: string };
   };
@@ -12,7 +12,7 @@ interface Props {
 const { brand, ui, otherLocaleUrl } = Astro.props;
 ---
 
-<nav aria-label="Main">
+<nav aria-label={ui.nav.label}>
   <span class="brand">{brand.toLowerCase()}</span>
   <a href="#about">{ui.nav.about}</a>
   <a href="#experience">{ui.nav.experience}</a>

@@ -1,5 +1,6 @@
 {
   "nav": {
+    "label": "Main navigation",
     "about": "about",
     "experience": "experience",
     "speaking": "speaking",
@@ -11,12 +12,14 @@
     "speaking": "Speaking & Community",
     "education": "Education & Certifications"
   },
-  "watch": "watch ↗",
+  "watch": "watch",
+  "skipToContent": "Skip to content",
+  "siteName": "Leandro Szikora — Portfolio",
   "upcoming": "upcoming",
   "now": "now",
   "cta": "Let's talk data.",
   "builtWith": "Built with Astro + Claude Code",
-  "source": "source ↗",
+  "source": "source",
   "themeToggle": "Toggle dark mode",
   "langSwitch": { "label": "es", "title": "Versión en español" }
 }

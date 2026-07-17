@@ -1,5 +1,6 @@
 {
   "nav": {
+    "label": "Navegación principal",
     "about": "sobre mí",
     "experience": "experiencia",
     "speaking": "charlas",
@@ -11,12 +12,14 @@
     "speaking": "Charlas y comunidad",
     "education": "Educación y certificaciones"
   },
-  "watch": "ver ↗",
+  "watch": "ver",
+  "skipToContent": "Ir al contenido",
+  "siteName": "Leandro Szikora — Portfolio",
   "upcoming": "próximamente",
   "now": "actual",
   "cta": "Hablemos de datos.",
   "builtWith": "Hecho con Astro + Claude Code",
-  "source": "código ↗",
+  "source": "código",
   "themeToggle": "Cambiar tema",
   "langSwitch": { "label": "en", "title": "English version" }
 }

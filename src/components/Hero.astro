@@ -25,9 +25,9 @@ const photo = `${base}/photo.jpg`;
       <h1>{profile.headline}</h1>
       <p class="tagline">{profile.tagline}</p>
       <div class="hero-links">
-        <a href={profile.linkedin}>linkedin ↗</a>
-        <a href={profile.github}>github ↗</a>
-        <a href={`mailto:${profile.email}`}>email ↗</a>
+        <a href={profile.linkedin}>linkedin <span class="ext" aria-hidden="true">↗</span></a>
+        <a href={profile.github}>github <span class="ext" aria-hidden="true">↗</span></a>
+        <a href={`mailto:${profile.email}`}>email <span class="ext" aria-hidden="true">↗</span></a>
       </div>
     </div>
     <img

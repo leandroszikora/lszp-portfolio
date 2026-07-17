@@ -20,12 +20,12 @@ const year = new Date().getFullYear();
   <p class="cta">{ui.cta}</p>
   <div class="links">
     <a class="footer-email" href={`mailto:${profile.email}`}>{profile.email}</a>
-    <a href={profile.linkedin}>linkedin ↗</a>
-    <a href={profile.github}>github ↗</a>
+    <a href={profile.linkedin}>linkedin <span class="ext" aria-hidden="true">↗</span></a>
+    <a href={profile.github}>github <span class="ext" aria-hidden="true">↗</span></a>
   </div>
   <p class="fine">
     © {year} {profile.name} · {ui.builtWith}<span class="source-wrap"> ·
-    <a class="source" href={profile.repo}>{ui.source}</a></span> · {profile.location}
+    <a class="source" href={profile.repo}>{ui.source} <span class="ext" aria-hidden="true">↗</span></a></span> · {profile.location}
   </p>
 </footer>
 

@@ -19,11 +19,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const otherLocaleUrl = `${base}/`;
 ---
 
-<Base locale="es" profile={profile} education={education}>
+<Base locale="es" profile={profile} education={education} siteName={ui.siteName}>
+  <a class="skip-link" href="#main">{ui.skipToContent}</a>
   <div class="wrap">
     <Nav brand={profile.name} ui={ui} otherLocaleUrl={otherLocaleUrl} />
     <Hero profile={profile} />
-    <main>
+    <main id="main">
       <About profile={profile} title={ui.sections.about} />
       <Experience experience={experience} ui={ui} />
       <Speaking
