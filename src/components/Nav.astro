@@ -1,0 +1,36 @@
+---
+import profile from "../data/profile.json";
+---
+
+<nav aria-label="Main">
+  <span class="brand">{profile.name.toLowerCase()}</span>
+  <a href="#about">about</a>
+  <a href="#experience">experience</a>
+  <a href="#speaking">speaking</a>
+  <a href="#education">education</a>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    gap: 1.75rem;
+    align-items: center;
+    padding: 1.5rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: var(--ink-soft);
+    text-transform: lowercase;
+  }
+  nav a:hover {
+    color: var(--accent);
+  }
+  nav .brand {
+    color: var(--ink);
+    font-weight: 600;
+    margin-right: auto;
+  }
+</style>

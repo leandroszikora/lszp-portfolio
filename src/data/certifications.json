@@ -1,0 +1,8 @@
+[
+  { "name": "GCP Databricks Platform Architect", "issuer": "Databricks", "year": "2025" },
+  { "name": "Ververica Bootcamp (Apache Flink)", "issuer": "Ververica", "year": "2025" },
+  { "name": "Ignite Master Program", "issuer": "Lidr.co", "year": "2025", "note": "Technical leadership" },
+  { "name": "Data Engineer Associate", "issuer": "Databricks", "year": "2024" },
+  { "name": "DAG Authoring for Apache Airflow", "issuer": "Astronomer", "year": "2021" },
+  { "name": "Redis Certified Developer", "issuer": "Redis Labs", "year": "2021" }
+]

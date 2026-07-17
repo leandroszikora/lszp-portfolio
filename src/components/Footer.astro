@@ -1,0 +1,43 @@
+---
+import profile from "../data/profile.json";
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <p class="cta">Let's talk data.</p>
+  <div class="links">
+    <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    <a href={profile.linkedin}>linkedin ↗</a>
+    <a href={profile.github}>github ↗</a>
+  </div>
+  <p class="fine">
+    © {year} {profile.name} · Built with Astro · {profile.location}
+  </p>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 3rem 0 4rem;
+  }
+  footer .cta {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  footer .links {
+    display: flex;
+    gap: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    flex-wrap: wrap;
+  }
+  footer .fine {
+    margin-top: 2.5rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+  }
+</style>

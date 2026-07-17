@@ -1,0 +1,109 @@
+---
+import speaking from "../data/speaking.json";
+import profile from "../data/profile.json";
+
+const rec = profile.recommendation;
+---
+
+<section id="speaking">
+  <h2><span class="idx">03</span>Speaking &amp; Community</h2>
+  <div class="talks">
+    {
+      speaking.map((talk) => (
+        <article class="talk">
+          <p class="where">{talk.where}</p>
+          <h3>{talk.title}</h3>
+          <p>{talk.description}</p>
+          {talk.url && (
+            <a class="watch" href={talk.url}>
+              watch ↗
+            </a>
+          )}
+        </article>
+      ))
+    }
+  </div>
+
+  {
+    rec && (
+      <div class="quote">
+        <blockquote>{rec.quote}</blockquote>
+        <cite>
+          — {rec.author}, {rec.authorRole}
+        </cite>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  section {
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--line);
+  }
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  h2 .idx {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    vertical-align: super;
+    margin-right: 0.5rem;
+  }
+  .talks {
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .talk {
+    background: var(--paper);
+    padding: 1.4rem 1.5rem;
+  }
+  .talk .where {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .talk h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+  .talk p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .talk .watch {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+  }
+  .quote {
+    margin-top: 2.25rem;
+    max-width: 38rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+  .quote blockquote {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .quote cite {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-style: normal;
+    color: var(--ink-soft);
+  }
+</style>

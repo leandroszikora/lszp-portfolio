@@ -1,0 +1,144 @@
+---
+import experience from "../data/experience.json";
+---
+
+<section id="experience">
+  <h2><span class="idx">02</span>Experience</h2>
+
+  {
+    experience.map((job) => (
+      <article class="job">
+        <div class="job-when">
+          {job.upcoming ? (
+            <span class="now">{job.start} —</span>
+          ) : job.end === "now" ? (
+            <>
+              {job.start} — <span class="now">now</span>
+            </>
+          ) : (
+            `${job.start} — ${job.end}`
+          )}
+        </div>
+        <div>
+          <h3>
+            {job.title}
+            {job.upcoming && <span class="badge">upcoming</span>}
+          </h3>
+          <p class="org">
+            {job.company}
+            {job.location ? ` · ${job.location}` : ""}
+          </p>
+          {job.bullets.length > 0 && (
+            <ul>
+              {job.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          )}
+          {job.tech.length > 0 && (
+            <div class="chips">
+              {job.tech.map((t) => (
+                <span class="chip">{t}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  section {
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--line);
+  }
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  h2 .idx {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    vertical-align: super;
+    margin-right: 0.5rem;
+  }
+  .job {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 1.5rem;
+    padding: 1.6rem 0;
+  }
+  .job + .job {
+    border-top: 1px solid var(--line);
+  }
+  .job-when {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    padding-top: 0.3rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .job-when .now {
+    color: var(--accent);
+  }
+  .job h3 {
+    font-size: 1.12rem;
+    letter-spacing: -0.01em;
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    padding: 0.1rem 0.55rem;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+  }
+  .job .org {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin-bottom: 0.6rem;
+  }
+  .job ul {
+    margin-bottom: 0.8rem;
+  }
+  .job li {
+    padding-left: 1.1rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.3rem;
+  }
+  .job li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .chip {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    background: var(--chip-bg);
+    color: var(--ink-soft);
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+  }
+  @media (max-width: 600px) {
+    .job {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+  }
+</style>

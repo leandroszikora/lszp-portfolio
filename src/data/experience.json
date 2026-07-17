@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Staff ML Engineer",
+    "company": "Factorial",
+    "location": "Barcelona",
+    "start": "sep 2026",
+    "end": null,
+    "upcoming": true,
+    "bullets": [
+      "Joining the Barcelona HR-tech unicorn to work across the full data & ML stack."
+    ],
+    "tech": []
+  },
+  {
+    "title": "Senior Data Engineer",
+    "company": "Schwarz Digits Spain",
+    "location": "Barcelona",
+    "start": "2023",
+    "end": "now",
+    "bullets": [
+      "Lead the Data Engineering team (4 engineers) inside the Data Platform team — roadmap and career growth.",
+      "Design data governance, security and availability features for the Phar Data Platform."
+    ],
+    "tech": ["Azure", "Databricks", "Airflow", "Terraform", "Kubernetes", "Flink"]
+  },
+  {
+    "title": "Senior Data Engineer",
+    "company": "Oxigent Technologies",
+    "location": "Barcelona",
+    "start": "2022",
+    "end": "2023",
+    "bullets": [
+      "Designed and supported features for the main data platform of a top client."
+    ],
+    "tech": ["Azure", "Databricks", "Scala"]
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Etermax",
+    "location": "Buenos Aires",
+    "start": "2021",
+    "end": "2022",
+    "bullets": [
+      "Built pipelines for business teams with Airflow, Databricks, Redshift and S3."
+    ],
+    "tech": ["Airflow", "Databricks", "AWS"]
+  },
+  {
+    "title": "Big Data Engineer",
+    "company": "DBLandIT",
+    "location": "Buenos Aires",
+    "start": "2019",
+    "end": "2021",
+    "bullets": [
+      "IoT platforms, national agriculture census data mining, TV rating analysis, serverless data lakes."
+    ],
+    "tech": ["PySpark", "AWS Glue", "MongoDB", "Cassandra", "Redis"]
+  },
+  {
+    "title": "Teaching Assistant — NoSQL Databases",
+    "company": "Universidad Tecnológica Nacional (FRBA)",
+    "location": "Buenos Aires",
+    "start": "2021",
+    "end": "2022",
+    "bullets": [],
+    "tech": ["Redis", "Cassandra", "MongoDB", "Neo4J", "Hadoop"]
+  }
+]

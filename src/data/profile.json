@@ -1,0 +1,21 @@
+{
+  "name": "Leandro Szikora",
+  "fullName": "Leandro Agustín Szikora",
+  "role": "Staff ML Engineer",
+  "location": "Barcelona",
+  "headline": "Data platforms, end to end.",
+  "tagline": "Seven years across the whole data stack — from IoT pipelines and NoSQL systems in Buenos Aires to enterprise lakehouses and data governance in Barcelona. Next chapter: Staff ML Engineer at Factorial.",
+  "email": "leandroszikora@hotmail.com",
+  "linkedin": "https://www.linkedin.com/in/leandro-szikora/",
+  "github": "https://github.com/leandroszikora",
+  "about": [
+    "I'm an Information Systems Engineer (UTN FRBA) who fell in love with data and cloud systems early and never looked back. What I enjoy most is making decisions: weighing the trade-offs, taking the calculated risk, and owning the outcome.",
+    "I learn fast and adapt faster — a skill sharpened by working in multicultural teams across Argentina and Spain. Today I lead a team of four data engineers, and I've had the chance to drive migrations and platform projects that touched most of the companies I've worked for."
+  ],
+  "human": "Off the clock: fútbol 🇦🇷, mate and coffee (no need to choose), collecting manga and perfumes, exploring every city I visit on foot — and volunteering at a cat shelter, where my two cats fully approve of my career choices.",
+  "recommendation": {
+    "quote": "His data pipelines and tools knowledge and his great ability to learn fast… was decisive for the success of the project.",
+    "author": "Oscar Pulido",
+    "authorRole": "Cloud Data Lake Engineer @ Google"
+  }
+}

@@ -1,0 +1,45 @@
+---
+import profile from "../data/profile.json";
+---
+
+<section id="about" class="about">
+  <h2><span class="idx">01</span>About</h2>
+  {profile.about.map((para) => <p>{para}</p>)}
+  {profile.human && <div class="human">{profile.human}</div>}
+</section>
+
+<style>
+  section {
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--line);
+  }
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  h2 .idx {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    vertical-align: super;
+    margin-right: 0.5rem;
+  }
+  .about p {
+    max-width: 38rem;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .about p + p {
+    color: var(--ink-soft);
+  }
+  .human {
+    margin-top: 1.75rem;
+    padding: 1.1rem 1.3rem;
+    background: var(--accent-soft);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--ink);
+    max-width: 38rem;
+  }
+</style>
