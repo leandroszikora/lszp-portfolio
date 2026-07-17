@@ -15,7 +15,8 @@
   "upcoming": "próximamente",
   "now": "actual",
   "cta": "Hablemos de datos.",
-  "builtWith": "Hecho con Astro",
+  "builtWith": "Hecho con Astro + Claude Code",
+  "source": "código ↗",
   "themeToggle": "Cambiar tema",
   "langSwitch": { "label": "en", "title": "English version" }
 }

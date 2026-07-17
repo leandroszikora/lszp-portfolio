@@ -7,9 +7,11 @@
   "email": "leandroszikora@hotmail.com",
   "linkedin": "https://www.linkedin.com/in/leandro-szikora/",
   "github": "https://github.com/leandroszikora",
+  "repo": "https://github.com/leandroszikora/lszp-portfolio",
   "about": [
     "I'm an Information Systems Engineer (UTN FRBA) who fell in love with data and cloud systems early and never looked back. What I enjoy most is making decisions: weighing the trade-offs, taking the calculated risk, and owning the outcome.",
-    "I learn fast and adapt even faster — a skill sharpened by working in multicultural teams across Argentina and Spain. Today I lead a team of four data engineers, and I've had the chance to drive migrations and platform projects that made a real impact at most of the companies I've worked for. The one I'm proudest of: evolving our Unity Catalog governance from a centralized model to a data-mesh approach — each team gets its own lakehouse and works independently — the story I told at the Databricks Data + AI Summit 2026."
+    "I learn fast and adapt even faster — a skill sharpened by working in multicultural teams across Argentina and Spain. Today I lead a team of four data engineers, and I've had the chance to drive migrations and platform projects that made a real impact at most of the companies I've worked for. The one I'm proudest of: evolving our Unity Catalog governance from a centralized model to a data-mesh approach — each team gets its own lakehouse and works independently — the story I told at the Databricks Data + AI Summit 2026.",
+    "This site doubles as a working example of how I build with AI: designed and developed with Claude Code using a multi-agent setup — specialized agents for frontend and CI/CD, plus a custom skill that interviews me to keep the content fresh. The source is public on GitHub, linked in the footer."
   ],
   "human": "Off the clock: fútbol 🇦🇷, mate and coffee (no need to choose), collecting manga and perfumes, exploring every city I visit on foot — and volunteering at a cat shelter, where my two cats fully approve of my career choices.",
   "recommendation": {

@@ -74,4 +74,4 @@ agent (its context is intact) rather than fixing it in the main loop.
 Push to `main` triggers `.github/workflows/deploy.yml` (checkout@v7,
 withastro/action@v6, deploy-pages@v5 — Node 24 majors; build + deploy to
 Pages). Repo Pages source is "GitHub Actions". GitHub account:
-`leandroszikora` (personal — never the `lszikoradblandit` work account).
+`leandroszikora` (personal account only — never a work account).

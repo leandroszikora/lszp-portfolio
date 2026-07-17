@@ -15,7 +15,8 @@
   "upcoming": "upcoming",
   "now": "now",
   "cta": "Let's talk data.",
-  "builtWith": "Built with Astro",
+  "builtWith": "Built with Astro + Claude Code",
+  "source": "source ↗",
   "themeToggle": "Toggle dark mode",
   "langSwitch": { "label": "es", "title": "Versión en español" }
 }

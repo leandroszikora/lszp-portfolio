@@ -6,8 +6,9 @@ interface Props {
     linkedin: string;
     github: string;
     location: string;
+    repo: string;
   };
-  ui: { cta: string; builtWith: string };
+  ui: { cta: string; builtWith: string; source: string };
 }
 
 const { profile, ui } = Astro.props;
@@ -23,7 +24,8 @@ const year = new Date().getFullYear();
     <a href={profile.github}>github ↗</a>
   </div>
   <p class="fine">
-    © {year} {profile.name} · {ui.builtWith} · {profile.location}
+    © {year} {profile.name} · {ui.builtWith}<span class="source-wrap"> ·
+    <a class="source" href={profile.repo}>{ui.source}</a></span> · {profile.location}
   </p>
 </footer>
 
@@ -50,5 +52,13 @@ const year = new Date().getFullYear();
     font-family: var(--mono);
     font-size: 0.7rem;
     color: var(--ink-soft);
+  }
+  footer .fine .source {
+    color: var(--ink-soft);
+    transition: color 0.2s ease;
+  }
+  footer .fine .source:hover,
+  footer .fine .source:focus-visible {
+    color: var(--accent);
   }
 </style>
