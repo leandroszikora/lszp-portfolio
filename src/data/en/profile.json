@@ -9,7 +9,7 @@
   "github": "https://github.com/leandroszikora",
   "about": [
     "I'm an Information Systems Engineer (UTN FRBA) who fell in love with data and cloud systems early and never looked back. What I enjoy most is making decisions: weighing the trade-offs, taking the calculated risk, and owning the outcome.",
-    "I learn fast and adapt faster — a skill sharpened by working in multicultural teams across Argentina and Spain. Today I lead a team of four data engineers, and I've had the chance to drive migrations and platform projects that touched most of the companies I've worked for."
+    "I learn fast and adapt even faster — a skill sharpened by working in multicultural teams across Argentina and Spain. Today I lead a team of four data engineers, and I've had the chance to drive migrations and platform projects that made a real impact at most of the companies I've worked for. The one I'm proudest of: evolving our Unity Catalog governance from a centralized model to a data-mesh approach — each team gets its own lakehouse and works independently — the story I told at the Databricks Data + AI Summit 2026."
   ],
   "human": "Off the clock: fútbol 🇦🇷, mate and coffee (no need to choose), collecting manga and perfumes, exploring every city I visit on foot — and volunteering at a cat shelter, where my two cats fully approve of my career choices.",
   "recommendation": {

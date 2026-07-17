@@ -8,8 +8,8 @@
   "linkedin": "https://www.linkedin.com/in/leandro-szikora/",
   "github": "https://github.com/leandroszikora",
   "about": [
-    "Soy Ingeniero en Sistemas de Información (UTN FRBA); me enamoré temprano de los datos y los sistemas cloud, y nunca miré atrás. Lo que más disfruto es tomar decisiones: sopesar los trade-offs, asumir el riesgo calculado y hacerme cargo del resultado.",
-    "Aprendo rápido y me adapto más rápido — una habilidad afilada trabajando en equipos multiculturales entre Argentina y España. Hoy lidero un equipo de cuatro data engineers, y tuve la oportunidad de impulsar migraciones y proyectos de plataforma que atravesaron a la mayoría de las compañías donde trabajé."
+    "Soy Ingeniero en Sistemas de Información (UTN FRBA); me apasioné rápidamente por los datos y los sistemas cloud, y de ahí no me fui. Lo que más disfruto es tomar decisiones: sopesar los trade-offs, asumir el riesgo calculado y hacerme cargo del resultado.",
+    "Aprendo rápido y me adapto incluso más rápido — una habilidad afilada trabajando en equipos multiculturales entre Argentina y España. Hoy lidero un equipo de cuatro data engineers, y tuve la oportunidad de impulsar migraciones y proyectos de plataforma que impactaron positivamente a la mayoría de las compañías donde trabajé. Del que más orgulloso estoy: evolucionar nuestro governance de Unity Catalog de un modelo centralizado a un enfoque de data mesh — cada equipo recibe su propio lakehouse y trabaja de forma independiente — la historia que conté en el Databricks Data + AI Summit 2026."
   ],
   "human": "Fuera de horario: fútbol 🇦🇷, mate y café (no hace falta elegir), colecciono mangas y perfumes, recorro a pie cada ciudad que visito — y soy voluntario en un refugio de gatos, donde mis dos gatas aprueban plenamente mis decisiones de carrera.",
   "recommendation": {
