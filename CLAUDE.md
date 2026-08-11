@@ -1,8 +1,8 @@
 # lszp-portfolio
 
 Personal portfolio of Leandro Szikora Panaia (Data/ML Engineer, Barcelona),
-built with Astro and deployed to GitHub Pages at
-https://leandroszikora.github.io/lszp-portfolio (EN) and `/es/` (Spanish).
+built with Astro and deployed to GitHub Pages on the custom apex domain
+https://leandroszikora.dev (EN) and `/es/` (Spanish).
 
 ## Architecture
 
@@ -32,9 +32,14 @@ https://leandroszikora.github.io/lszp-portfolio (EN) and `/es/` (Spanish).
   (regeneration command in that file's header comment). Regenerate whenever
   name, role, or headline change.
 - Static site, minimal inline JS only (theme + reveal). System font stacks.
-- GitHub Pages serves from a subpath: always build URLs with Astro's `base`
-  (`import.meta.env.BASE_URL`); note BASE_URL may lack a trailing slash —
-  normalize before joining.
+- **Analytics**: cookieless GoatCounter beacon in `Base.astro` (no cookies,
+  no personal data → no consent banner, which is why GA4 was rejected).
+  Loaded `async` and last, and failure-tolerant: nothing on the page depends
+  on it, and it self-ignores localhost so previews stay out of the stats.
+- The site is served from the domain root (no Astro `base` subpath), but
+  keep building URLs through `import.meta.env.BASE_URL` and the existing
+  normalize-then-join helpers — that is what made this migration a one-line
+  config change, and it keeps a subpath deploy possible.
 
 ## Multi-agent system (learning project)
 
@@ -75,3 +80,10 @@ Push to `main` triggers `.github/workflows/deploy.yml` (checkout@v7,
 withastro/action@v6, deploy-pages@v5 — Node 24 majors; build + deploy to
 Pages). Repo Pages source is "GitHub Actions". GitHub account:
 `leandroszikora` (personal account only — never a work account).
+
+Custom domain `leandroszikora.dev`: DNS at Cloudflare (A/AAAA to the four
+GitHub Pages IPs, `www` CNAME to `leandroszikora.github.io`), all records
+**DNS-only / grey cloud** — proxying before GitHub issues its certificate
+breaks ACME validation. `public/CNAME` pins the domain on every deploy;
+deleting it makes Pages drop back to the `github.io` subpath. `.dev` is
+HSTS-preloaded, so HTTP is never an option — "Enforce HTTPS" must stay on.

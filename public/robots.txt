@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://leandroszikora.github.io/lszp-portfolio/sitemap-index.xml
+Sitemap: https://leandroszikora.dev/sitemap-index.xml

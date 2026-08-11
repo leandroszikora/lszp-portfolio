@@ -2,9 +2,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// GitHub Pages project site: https://leandroszikora.github.io/lszp-portfolio
+// Served from the apex custom domain on GitHub Pages, so the site lives at
+// the root: no `base` subpath. `public/CNAME` is what pins the domain on
+// every Actions deploy.
 export default defineConfig({
-  site: 'https://leandroszikora.github.io',
-  base: '/lszp-portfolio',
+  site: 'https://leandroszikora.dev',
   integrations: [sitemap()],
 });

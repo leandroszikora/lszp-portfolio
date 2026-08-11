@@ -2,9 +2,9 @@
 
 Personal portfolio of **Leandro Szikora Panaia** — Data/ML Engineer, Barcelona.
 
-**Live:** [English](https://leandroszikora.github.io/lszp-portfolio/) · [Español](https://leandroszikora.github.io/lszp-portfolio/es/)
+**Live:** [English](https://leandroszikora.dev/) · [Español](https://leandroszikora.dev/es/)
 
-Static site built with [Astro](https://astro.build), deployed to GitHub Pages. No frameworks, no trackers, system fonts, ~zero JavaScript (only a pre-paint theme script and an IntersectionObserver for reveal animations).
+Static site built with [Astro](https://astro.build), deployed to GitHub Pages on a custom domain. No frameworks, no cookies, system fonts, ~zero JavaScript (a pre-paint theme script, an IntersectionObserver for reveal animations, and a cookieless [GoatCounter](https://www.goatcounter.com) beacon).
 
 ## Built with AI — on purpose
 

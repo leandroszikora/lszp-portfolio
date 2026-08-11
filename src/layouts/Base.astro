@@ -161,5 +161,15 @@ const personSchema = {
         });
       })();
     </script>
+
+    <!-- Analytics: GoatCounter. Cookieless and stores no personal data, so
+         no consent banner is needed. Loaded async and last; if it is blocked
+         or fails, nothing else on the page is affected. It ignores localhost,
+         so `npm run preview` does not pollute the stats. -->
+    <script
+      is:inline
+      data-goatcounter="https://leandroszikora.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"></script>
   </body>
 </html>
