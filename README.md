@@ -2,7 +2,7 @@
 
 Personal portfolio of **Leandro Szikora Panaia** — Data/ML Engineer, Barcelona.
 
-**Live:** [English](https://leandroszikora.dev/) · [Español](https://leandroszikora.dev/es/)
+**Live:** [English](https://leandroszikora.dev/) · [Español](https://leandroszikora.dev/es/) · [Català](https://leandroszikora.dev/ca/)
 
 Static site built with [Astro](https://astro.build), deployed to GitHub Pages on a custom domain. No frameworks, no cookies, system fonts, ~zero JavaScript (a pre-paint theme script, an IntersectionObserver for reveal animations, and a cookieless [GoatCounter](https://www.goatcounter.com) beacon).
 
@@ -20,8 +20,8 @@ The split follows a simple rule: **agents** get self-contained build tasks they 
 
 ## Architecture
 
-- **Content and presentation are fully separated.** All copy lives in `src/data/{en,es}/*.json` — one folder per locale, same schemas. Components never hardcode user-visible strings and never import JSON; they receive `data`/`ui` via props from the pages.
-- **i18n without a framework**: `src/pages/index.astro` (EN) and `src/pages/es/index.astro` (ES) compose the same components with their locale's data. `Base.astro` drives `<html lang>`, `og:locale`, canonicals and crossed hreflang alternates from a `locale` prop.
+- **Content and presentation are fully separated.** All copy lives in `src/data/{en,es,ca}/*.json` — one folder per locale, same schemas. Components never hardcode user-visible strings and never import JSON; they receive `data`/`ui` via props from the pages.
+- **i18n without a framework**, in three languages: `src/i18n/locales.ts` is the single locale table, one page per locale loads its own JSON, and they all render the same `Portfolio.astro`. `Base.astro` drives `<html lang>`, `og:locale`, canonicals and crossed hreflang alternates from a `locale` prop. Adding a fourth language is a data folder, a page file and one row in the table.
 - **Dark mode** via `prefers-color-scheme` *and* a persisted toggle (`data-theme` + `localStorage`), with a pre-paint inline script so there's no flash.
 - **Accessible by default**: semantic landmarks, skip-to-content link, localized `aria-label`s, decorative glyphs hidden from screen readers, `prefers-reduced-motion` respected, content visible without JavaScript.
 - **Print stylesheet** turns the page into a clean one-page CV (`⌘P` → PDF).
@@ -31,7 +31,7 @@ The split follows a simple rule: **agents** get self-contained build tasks they 
 
 ```sh
 npm run dev       # local dev server
-npm run build     # production build (both locales + sitemap) into dist/
+npm run build     # production build (all locales + sitemap) into dist/
 npm run preview   # serve the built site locally
 ```
 

@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Staff ML Engineer",
+    "company": "Factorial",
+    "location": "Barcelona",
+    "start": "set 2026",
+    "end": null,
+    "upcoming": true,
+    "bullets": [
+      "M'incorporo a l'unicorni HR-tech de Barcelona per treballar en tot el stack de dades i ML."
+    ],
+    "tech": []
+  },
+  {
+    "title": "Senior Data Engineer",
+    "company": "Schwarz Digits Spain",
+    "location": "Barcelona",
+    "start": "2023",
+    "end": "now",
+    "bullets": [
+      "Lidero l'equip de Data Engineering (4 enginyers) dins de l'equip de Data Platform — roadmap i desenvolupament de carrera.",
+      "Dissenyo features de data governance, seguretat i disponibilitat per a la Phar Data Platform."
+    ],
+    "tech": ["Azure", "Databricks", "Airflow", "Terraform", "Kubernetes", "Flink"]
+  },
+  {
+    "title": "Senior Data Engineer",
+    "company": "Oxigent Technologies",
+    "location": "Barcelona",
+    "start": "2022",
+    "end": "2023",
+    "bullets": [
+      "Vaig dissenyar i mantenir features de la plataforma de dades principal d'un client de primer nivell."
+    ],
+    "tech": ["Azure", "Databricks", "Scala"]
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Etermax",
+    "location": "Buenos Aires",
+    "start": "2021",
+    "end": "2022",
+    "bullets": [
+      "Vaig construir pipelines per a equips de negoci amb Airflow, Databricks, Redshift i S3."
+    ],
+    "tech": ["Airflow", "Databricks", "AWS"]
+  },
+  {
+    "title": "Big Data Engineer",
+    "company": "DBLandIT",
+    "location": "Buenos Aires",
+    "start": "2019",
+    "end": "2021",
+    "bullets": [
+      "Plataformes IoT, mineria de dades del cens agropecuari nacional, anàlisi d'audiències televisives, data lakes serverless."
+    ],
+    "tech": ["PySpark", "AWS Glue", "MongoDB", "Cassandra", "Redis"]
+  },
+  {
+    "title": "Ajudant de càtedra — Bases de Dades NoSQL",
+    "company": "Universidad Tecnológica Nacional (FRBA)",
+    "location": "Buenos Aires",
+    "start": "2021",
+    "end": "2022",
+    "bullets": [],
+    "tech": ["Redis", "Cassandra", "MongoDB", "Neo4J", "Hadoop"]
+  }
+]

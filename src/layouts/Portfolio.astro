@@ -1,0 +1,137 @@
+---
+/* The whole page body, shared by every locale. Each `src/pages/<locale>/`
+   entry is just its six JSON imports plus one <Portfolio /> — the markup
+   lives here once, so a new language never means a new copy of it. */
+import Base from "./Base.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Speaking from "../components/Speaking.astro";
+import Education from "../components/Education.astro";
+import Footer from "../components/Footer.astro";
+import { localeLinks, type Locale } from "../i18n/locales";
+
+interface Profile {
+  name: string;
+  role: string;
+  location: string;
+  headline: string;
+  tagline: string;
+  about: string[];
+  human?: string;
+  email: string;
+  linkedin: string;
+  github: string;
+  repo: string;
+  recommendation?: { quote: string; author: string; authorRole: string };
+}
+
+interface Job {
+  title: string;
+  company: string;
+  location?: string;
+  start: string;
+  end?: string | null;
+  upcoming?: boolean;
+  bullets: string[];
+  tech: string[];
+}
+
+interface Talk {
+  where: string;
+  title: string;
+  description: string;
+  url?: string | null;
+}
+
+interface EducationEntry {
+  degree: string;
+  school: string;
+  years?: string;
+  note?: string;
+}
+
+interface Cert {
+  name: string;
+  issuer: string;
+  year: string;
+  note?: string;
+}
+
+interface Ui {
+  nav: {
+    label: string;
+    about: string;
+    experience: string;
+    speaking: string;
+    education: string;
+  };
+  sections: {
+    about: string;
+    experience: string;
+    speaking: string;
+    education: string;
+  };
+  watch: string;
+  skipToContent: string;
+  siteName: string;
+  upcoming: string;
+  now: string;
+  cta: string;
+  builtWith: string;
+  source: string;
+  themeToggle: string;
+  langSwitch: { label: string };
+}
+
+export interface Props {
+  locale: Locale;
+  profile: Profile;
+  experience: Job[];
+  speaking: Talk[];
+  education: EducationEntry;
+  certifications: Cert[];
+  ui: Ui;
+}
+
+const {
+  locale,
+  profile,
+  experience,
+  speaking,
+  education,
+  certifications,
+  ui,
+} = Astro.props;
+
+const langLinks = localeLinks(locale);
+---
+
+<Base
+  locale={locale}
+  profile={profile}
+  education={education}
+  siteName={ui.siteName}
+>
+  <a class="skip-link" href="#main">{ui.skipToContent}</a>
+  <div class="wrap">
+    <Nav brand={profile.name} ui={ui} langLinks={langLinks} />
+    <Hero profile={profile} />
+    <main id="main">
+      <About profile={profile} title={ui.sections.about} />
+      <Experience experience={experience} ui={ui} />
+      <Speaking
+        speaking={speaking}
+        recommendation={profile.recommendation}
+        ui={ui}
+      />
+      <Education
+        education={education}
+        certifications={certifications}
+        title={ui.sections.education}
+      />
+    </main>
+    <Footer profile={profile} ui={ui} />
+  </div>
+</Base>

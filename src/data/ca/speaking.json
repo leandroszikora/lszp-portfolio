@@ -1,0 +1,32 @@
+[
+  {
+    "where": "Databricks Data + AI Summit 2026 · San Francisco",
+    "title": "Phar Lakehouse: The Evolution of Our Data Market",
+    "description": "Com vam convertir un emmagatzematge, una autenticació i un governance fragmentats en un procés unificat i automatitzat amb Unity Catalog i Terraform.",
+    "url": "https://youtu.be/Kgf6ewpHxKs"
+  },
+  {
+    "where": "Netcoreconf 2024 · Microsoft Ibérica, Madrid",
+    "title": "La revolución de datos de Lidl Plus con Databricks Unity Catalog",
+    "description": "La revolució de dades que hi ha darrere de Lidl Plus, impulsada per Databricks Unity Catalog.",
+    "url": "https://youtu.be/LcQqgkrlHz0"
+  },
+  {
+    "where": "DAIS 2026 Braindate · Amfitrió",
+    "title": "Challenges in Data Governance for AI Development",
+    "description": "Taula rodona entre iguals sobre com alinear el governance amb el desenvolupament accelerat d'IA.",
+    "url": null
+  },
+  {
+    "where": "Sirviendo Código · Comunitat",
+    "title": "Aumenta la eficiencia de tus pipelines de datos con Apache Airflow",
+    "description": "Amb Erika Paola Ortiz — nominada als premis del primer aniversari de la comunitat.",
+    "url": "https://youtu.be/SjeGVuHap7Y"
+  },
+  {
+    "where": "Data Engineering Latam · Comunitat",
+    "title": "Creando componentes personalizados en Apache Airflow",
+    "description": "Construint components personalitzats d'Airflow, per a la comunitat de dades de Llatinoamèrica.",
+    "url": "https://www.youtube.com/watch?v=5BvbjjWnUF4"
+  }
+]

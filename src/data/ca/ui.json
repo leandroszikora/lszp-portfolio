@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "label": "Navegació principal",
+    "about": "sobre mi",
+    "experience": "experiència",
+    "speaking": "xerrades",
+    "education": "educació"
+  },
+  "sections": {
+    "about": "Sobre mi",
+    "experience": "Experiència",
+    "speaking": "Xerrades i comunitat",
+    "education": "Educació i certificacions"
+  },
+  "watch": "veure",
+  "skipToContent": "Vés al contingut",
+  "siteName": "Leandro Szikora — Portfolio",
+  "upcoming": "properament",
+  "now": "actual",
+  "cta": "Parlem de dades.",
+  "builtWith": "Fet amb Astro + Claude Code",
+  "source": "codi",
+  "themeToggle": "Canvia el tema",
+  "langSwitch": { "label": "Idioma" }
+}

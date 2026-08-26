@@ -1,0 +1,20 @@
+---
+import Portfolio from "../../layouts/Portfolio.astro";
+
+import profile from "../../data/ca/profile.json";
+import experience from "../../data/ca/experience.json";
+import speaking from "../../data/ca/speaking.json";
+import education from "../../data/ca/education.json";
+import certifications from "../../data/ca/certifications.json";
+import ui from "../../data/ca/ui.json";
+---
+
+<Portfolio
+  locale="ca"
+  profile={profile}
+  experience={experience}
+  speaking={speaking}
+  education={education}
+  certifications={certifications}
+  ui={ui}
+/>

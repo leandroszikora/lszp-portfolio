@@ -145,7 +145,10 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; }
   /* Hide site chrome and interactive-only affordances */
   nav,
   .theme-toggle,
+  /* .lang-switch is the segmented group wrapper; hiding it takes the
+     whole EN/ES/CA control (links + active cell) with it. */
   .lang-switch,
+  .lang-switch > *,
   .watch,
   .hero-links,
   .source-wrap,

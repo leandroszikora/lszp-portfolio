@@ -2,20 +2,28 @@
 
 Personal portfolio of Leandro Szikora Panaia (Data/ML Engineer, Barcelona),
 built with Astro and deployed to GitHub Pages on the custom apex domain
-https://leandroszikora.dev (EN) and `/es/` (Spanish).
+https://leandroszikora.dev (EN), `/es/` (Spanish) and `/ca/` (Catalan) —
+the three languages Leandro speaks.
 
 ## Architecture
 
-- **Content lives in `src/data/{en,es}/*.json`** — the only files to edit for
+- **Content lives in `src/data/{en,es,ca}/*.json`** — the only files to edit for
   content updates. One folder per locale, same schemas: `profile`,
   `experience`, `education`, `certifications`, `speaking`, plus `ui.json`
   holding every interface string (nav labels, section titles, "watch",
   "upcoming", CTA…). Components never hardcode user-visible strings and never
   import JSON directly — they receive `data`/`ui` via props from the pages.
-- **Pages**: `src/pages/index.astro` (EN) and `src/pages/es/index.astro` (ES)
-  load their locale's data and compose the components. `Base.astro` takes a
-  `locale` prop driving `<html lang>`, `og:locale`, per-page canonical and
-  crossed hreflang alternates (x-default → EN).
+- **`src/i18n/locales.ts` is the single locale table.** Anything that
+  enumerates locales (paths, `og:locale`, switcher labels, hreflang) reads
+  from it — never inline a locale list in a component. The switcher's
+  `label`/`title` live there, not in `ui.json`, because a language name is
+  always written in its own language and is therefore identical on every page.
+- **Pages**: one per locale (`src/pages/index.astro`, `es/index.astro`,
+  `ca/index.astro`). Each only imports its locale's JSON and renders
+  `Portfolio.astro`, which holds the shared composition; `Base.astro` takes a
+  `locale` prop driving `<html lang>`, `og:locale` (+ alternates), per-page
+  canonical and crossed hreflang alternates (x-default → EN). Adding a locale
+  = a `src/data/<code>/` folder, a page file, and one row in `locales.ts`.
 - **Design source of truth is `design/mockup.html`** — the approved mockup.
   Design tokens are mirrored in `src/styles/global.css` as CSS custom
   properties, with dark theme via both `prefers-color-scheme` and
@@ -64,14 +72,17 @@ agent (its context is intact) rather than fixing it in the main loop.
 - Site copy is first person, confident but not boastful. English is the
   primary locale; Spanish mirrors it in Leandro's own voice (voseo casual in
   conversation, neutral in site copy).
-- The Oscar Pulido recommendation quote stays in English in both locales —
-  it's a verbatim quote.
+- The Oscar Pulido recommendation quote stays in English in all three
+  locales — it's a verbatim quote.
 - Talk titles keep their original language; descriptions are localized.
+- Catalan mirrors the Spanish in a neutral register (standard/central
+  Catalan, post-2017 IEC orthography — `soc`, not `sóc`). Company, technology
+  and certification names are never translated.
 
 ## Commands
 
 - `npm run dev` — local dev server
-- `npm run build` — production build into `dist/` (both locales + sitemap)
+- `npm run build` — production build into `dist/` (all locales + sitemap)
 - `npm run preview` — serve the built site locally
 
 ## Deployment
@@ -87,3 +98,12 @@ GitHub Pages IPs, `www` CNAME to `leandroszikora.github.io`), all records
 breaks ACME validation. `public/CNAME` pins the domain on every deploy;
 deleting it makes Pages drop back to the `github.io` subpath. `.dev` is
 HSTS-preloaded, so HTTP is never an option — "Enforce HTTPS" must stay on.
+
+## Planning
+
+The backlog — features, pending changes and the decisions behind them — lives
+in a local, unversioned Obsidian vault at `~/Obsidian/lszp-portfolio`
+(`02-Estado/Roadmap.md` is the board). It also covers the GitHub profile, not
+just this repo. Anything with a date or a pending owner belongs there, not in
+this file: `CLAUDE.md` describes how the repo works, the vault tracks what is
+left to do and why.

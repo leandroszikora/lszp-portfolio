@@ -1,15 +1,18 @@
 ---
+import type { LocaleLink } from "../i18n/locales";
+
 interface Props {
   brand: string;
   ui: {
     nav: { label: string; about: string; experience: string; speaking: string; education: string };
     themeToggle: string;
-    langSwitch: { label: string; title: string };
+    /** Group label for the language switcher ("Language" / "Idioma"). */
+    langSwitch: { label: string };
   };
-  otherLocaleUrl: string;
+  langLinks: LocaleLink[];
 }
 
-const { brand, ui, otherLocaleUrl } = Astro.props;
+const { brand, ui, langLinks } = Astro.props;
 ---
 
 <nav aria-label={ui.nav.label}>
@@ -18,39 +21,60 @@ const { brand, ui, otherLocaleUrl } = Astro.props;
   <a href="#experience">{ui.nav.experience}</a>
   <a href="#speaking">{ui.nav.speaking}</a>
   <a href="#education">{ui.nav.education}</a>
-  <a
-    class="lang-switch"
-    href={otherLocaleUrl}
-    title={ui.langSwitch.title}
-    hreflang={ui.langSwitch.label}
-    rel="alternate"
-    lang={ui.langSwitch.label}>{ui.langSwitch.label}</a
-  >
-  <button type="button" class="theme-toggle" aria-label={ui.themeToggle} aria-pressed="false">
-    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="4" fill="currentColor"></circle>
-      <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-        <line x1="12" y1="2" x2="12" y2="4"></line>
-        <line x1="12" y1="20" x2="12" y2="22"></line>
-        <line x1="2" y1="12" x2="4" y2="12"></line>
-        <line x1="20" y1="12" x2="22" y2="12"></line>
-        <line x1="4.9" y1="4.9" x2="6.3" y2="6.3"></line>
-        <line x1="17.7" y1="17.7" x2="19.1" y2="19.1"></line>
-        <line x1="4.9" y1="19.1" x2="6.3" y2="17.7"></line>
-        <line x1="17.7" y1="6.3" x2="19.1" y2="4.9"></line>
-      </g>
-    </svg>
-    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-      <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" fill="currentColor"></path>
-    </svg>
-  </button>
+  <div class="nav-actions">
+    <div class="lang-switch" role="group" aria-label={ui.langSwitch.label}>
+      {
+        langLinks.map((l) =>
+          l.current ? (
+            <span class="is-current" lang={l.code} aria-current="true">
+              {l.label}
+            </span>
+          ) : (
+            <a
+              href={l.href}
+              title={l.title}
+              hreflang={l.code}
+              rel="alternate"
+              lang={l.code}
+            >
+              {l.label}
+            </a>
+          )
+        )
+      }
+    </div>
+    <button type="button" class="theme-toggle" aria-label={ui.themeToggle} aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="currentColor"></circle>
+        <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <line x1="12" y1="2" x2="12" y2="4"></line>
+          <line x1="12" y1="20" x2="12" y2="22"></line>
+          <line x1="2" y1="12" x2="4" y2="12"></line>
+          <line x1="20" y1="12" x2="22" y2="12"></line>
+          <line x1="4.9" y1="4.9" x2="6.3" y2="6.3"></line>
+          <line x1="17.7" y1="17.7" x2="19.1" y2="19.1"></line>
+          <line x1="4.9" y1="19.1" x2="6.3" y2="17.7"></line>
+          <line x1="17.7" y1="6.3" x2="19.1" y2="4.9"></line>
+        </g>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" fill="currentColor"></path>
+      </svg>
+    </button>
+  </div>
 </nav>
 
 <style>
   nav {
     display: flex;
-    gap: 1.25rem;
+    gap: 0.85rem 1.25rem;
     align-items: center;
+    /* Three locales make the row long enough to wrap in the wordier locales
+       and on narrow viewports. `justify-content` only takes effect on a
+       wrapped line (the brand's auto margin absorbs the free space on the
+       first one), so the actions land flush right under the nav links
+       instead of orphaned on the left. */
+    justify-content: flex-end;
     padding: 1.5rem 0 0;
     font-family: var(--mono);
     font-size: 0.78rem;
@@ -70,19 +94,57 @@ const { brand, ui, otherLocaleUrl } = Astro.props;
     font-weight: 600;
     margin-right: auto;
   }
+  /* Switcher + theme toggle travel together, so they wrap as one unit and
+     the toggle is never orphaned on a line of its own. */
+  .nav-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  /* Segmented language switcher: one bordered group, cells separated by a
+     single shared border (border-left on every cell but the first), so no
+     seam is ever doubled. `overflow: hidden` clips the end cells' hover /
+     active background to the group radius. */
   .lang-switch {
+    display: inline-flex;
+    align-items: stretch;
     border: 1px solid var(--line);
     border-radius: 4px;
-    padding: 0.15rem 0.45rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .lang-switch > * {
+    padding: 0.28rem 0.42rem;
+    color: var(--ink-soft);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    border-left: 1px solid var(--line);
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
-  .lang-switch:hover,
-  .lang-switch:focus-visible {
+  .lang-switch > :first-child {
+    border-left: 0;
+  }
+  .lang-switch a:hover,
+  .lang-switch a:focus-visible {
     color: var(--accent);
-    border-color: var(--accent);
+    background: var(--accent-soft);
     text-decoration: none;
+  }
+  /* Inset outline so it is not clipped by the group's overflow. */
+  .lang-switch a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+    border-radius: 0;
+  }
+  /* Active locale: not a link, no pointer affordance, faint fill. */
+  .lang-switch .is-current {
+    background: var(--chip-bg);
+    color: var(--ink);
+    font-weight: 600;
+    cursor: default;
   }
   .theme-toggle {
     display: inline-flex;
