@@ -38,7 +38,8 @@ the three languages Leandro speaks.
   (light tokens forced, nav/toggle/watch links hidden, `break-inside: avoid`).
 - **Social card**: `public/og-image.png` is generated from `design/og.html`
   (regeneration command in that file's header comment). Regenerate whenever
-  name, role, or headline change.
+  name, role, headline **or the site URL** change — all four are baked into
+  the PNG, so a domain move needs it just as much as a new job title.
 - Static site, minimal inline JS only (theme + reveal). System font stacks.
 - **Analytics**: cookieless GoatCounter beacon in `Base.astro` (no cookies,
   no personal data → no consent banner, which is why GA4 was rejected).
