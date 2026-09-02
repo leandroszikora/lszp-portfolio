@@ -3,11 +3,10 @@
     "title": "Staff ML Engineer",
     "company": "Factorial",
     "location": "Barcelona",
-    "start": "sep 2026",
-    "end": null,
-    "upcoming": true,
+    "start": "2026",
+    "end": "now",
     "bullets": [
-      "Joining the Barcelona HR-tech unicorn to work across the full data & ML stack."
+      "Working across the full data & ML stack at the Barcelona HR-tech unicorn."
     ],
     "tech": []
   },
@@ -16,10 +15,10 @@
     "company": "Schwarz Digits Spain",
     "location": "Barcelona",
     "start": "2023",
-    "end": "now",
+    "end": "2026",
     "bullets": [
-      "Lead the Data Engineering team (4 engineers) inside the Data Platform team — roadmap and career growth.",
-      "Design data governance, security and availability features for the Phar Data Platform."
+      "Led the Data Engineering team (4 engineers) inside the Data Platform team — roadmap and career growth.",
+      "Designed data governance, security and availability features for the Phar Data Platform."
     ],
     "tech": ["Azure", "Databricks", "Airflow", "Terraform", "Kubernetes", "Flink"]
   },

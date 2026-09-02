@@ -3,14 +3,14 @@
   "role": "Staff ML Engineer",
   "location": "Barcelona",
   "headline": "Plataformes de dades, de punta a punta.",
-  "tagline": "Set anys recorrent tot el stack de dades — de pipelines IoT i sistemes NoSQL a Buenos Aires a lakehouses enterprise i data governance a Barcelona. Pròxim capítol: Staff ML Engineer a Factorial.",
+  "tagline": "Set anys recorrent tot el stack de dades — de pipelines IoT i sistemes NoSQL a Buenos Aires a lakehouses enterprise i data governance a Barcelona. Ara a Factorial, treballant entre dades i ML.",
   "email": "leandroszikora@hotmail.com",
   "linkedin": "https://www.linkedin.com/in/leandro-szikora/",
   "github": "https://github.com/leandroszikora",
   "repo": "https://github.com/leandroszikora/lszp-portfolio",
   "about": [
     "Soc Enginyer en Sistemes d'Informació (UTN FRBA); de seguida em vaig apassionar per les dades i els sistemes cloud, i d'allà no me n'he mogut. El que més gaudeixo és prendre decisions: sospesar els trade-offs, assumir el risc calculat i fer-me responsable del resultat.",
-    "Aprenc ràpid i m'adapto encara més ràpid — una habilitat esmolada treballant en equips multiculturals entre l'Argentina i Espanya. Avui lidero un equip de quatre data engineers, i he tingut l'oportunitat d'impulsar migracions i projectes de plataforma que han impactat positivament la majoria de les empreses on he treballat. Del que estic més orgullós: fer evolucionar el nostre governance d'Unity Catalog d'un model centralitzat cap a un enfocament de data mesh — cada equip rep el seu propi lakehouse i treballa de manera independent — la història que vaig explicar al Databricks Data + AI Summit 2026.",
+    "Aprenc ràpid i m'adapto encara més ràpid — una habilitat esmolada treballant en equips multiculturals entre l'Argentina i Espanya. He tingut l'oportunitat d'impulsar migracions i projectes de plataforma que han impactat positivament la majoria de les empreses on he treballat. Del que estic més orgullós: fer evolucionar el nostre governance d'Unity Catalog d'un model centralitzat cap a un enfocament de data mesh — cada equip rep el seu propi lakehouse i treballa de manera independent — la història que vaig explicar al Databricks Data + AI Summit 2026.",
     "Aquest lloc web és, a més, un exemple real de com construeixo amb IA: dissenyat i desenvolupat amb Claude Code fent servir un sistema multiagent — agents especialitzats per al frontend i el CI/CD, més una skill pròpia que m'entrevista per mantenir el contingut al dia. El codi és públic a GitHub, amb l'enllaç al peu de pàgina."
   ],
   "human": "Fora d'hores: futbol 🇦🇷, mate i cafè (no cal triar), col·lecciono manga i perfums, recorro a peu cada ciutat que visito — i faig de voluntari en un refugi de gats, on les meves dues gates aproven plenament les meves decisions professionals.",
