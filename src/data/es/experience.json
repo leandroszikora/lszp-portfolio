@@ -10,7 +10,7 @@
       "Diseñé y lancé un expert gateway que deriva cada pregunta a los expertos de dominio adecuados y, cuando hace falta, escala a un loop multi-step con límite de tiempo — validado con evals a ciegas antes de pasar a producción.",
       "Hice fiables los agentes de analytics sobre el data lake con schema discovery para text-to-SQL y catálogos de tablas curados, junto al equipo de Analytics.",
       "Construí la capa de evaluación y observabilidad: evaluadores LLM-as-a-judge, datasets etiquetados y configuración de Langfuse como código.",
-      "Llevo las operaciones de la plataforma de punta a punta: gobierno de agentes, retirada de agentes según su uso medido y una prueba de concepto de toda la plataforma sobre Azure (AKS)."
+      "Llevo las operaciones de la plataforma y el gobierno de agentes, incluida la retirada de agentes según su uso medido."
     ],
     "tech": ["Python", "LangChain", "Langfuse", "FastAPI", "MCP", "Azure OpenAI", "Kubernetes", "Argo CD"]
   },

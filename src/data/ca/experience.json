@@ -10,7 +10,7 @@
       "Vaig dissenyar i llançar un expert gateway que envia cada pregunta als experts de domini adequats i, quan cal, escala a un loop multi-step amb límit de temps — validat amb evals a cegues abans de passar a producció.",
       "Vaig fer fiables els agents d'analytics sobre el data lake amb schema discovery per a text-to-SQL i catàlegs de taules curats, juntament amb l'equip d'Analytics.",
       "Vaig construir la capa d'avaluació i observabilitat: avaluadors LLM-as-a-judge, datasets etiquetats i configuració de Langfuse com a codi.",
-      "Porto les operacions de la plataforma de cap a cap: governança d'agents, retirada d'agents segons l'ús mesurat i una prova de concepte de tota la plataforma sobre Azure (AKS)."
+      "Porto les operacions de la plataforma i la governança d'agents, inclosa la retirada d'agents segons l'ús mesurat."
     ],
     "tech": ["Python", "LangChain", "Langfuse", "FastAPI", "MCP", "Azure OpenAI", "Kubernetes", "Argo CD"]
   },
