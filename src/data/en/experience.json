@@ -6,9 +6,13 @@
     "start": "2026",
     "end": "now",
     "bullets": [
-      "Working across the full data & ML stack at the Barcelona HR-tech unicorn."
+      "Building Factorial's internal AI agent platform: agents for each business area that answer from live company data and internal docs, used daily across the company via Slack, a web app and MCP.",
+      "Designed and shipped an expert gateway that routes each question to the right domain experts, escalating to a time-boxed multi-step tool loop when needed — validated with blind evals before going to production.",
+      "Made analytics agents reliable on the data lake with text-to-SQL schema discovery and curated table catalogs, built with the Analytics team.",
+      "Built the evaluation and observability layer: LLM-as-a-judge evaluators, labelled datasets and Langfuse configuration as code.",
+      "Running platform operations end to end: agent governance, retiring agents based on measured usage, and a proof of concept of the whole platform on Azure (AKS)."
     ],
-    "tech": []
+    "tech": ["Python", "LangChain", "Langfuse", "FastAPI", "MCP", "Azure OpenAI", "Kubernetes", "Argo CD"]
   },
   {
     "title": "Senior Data Engineer",
